@@ -41,5 +41,5 @@ export const currentUser = {
 export const isAuthGuardActive = true;
 export const themeRadiusStorageKey = 'theme_radius'
 export const themeSelectedColorStorageKey = 'theme_selected_color'
-export const defaultColor = 'light.blueyale'
+export const defaultColor = 'light.bluenavy'
 export const colors = ['bluenavy', 'blueyale', 'blueolympic', 'greenmoss', 'greenlime', 'purplemonster', 'orangecarrot', 'redruby', 'yellowgranola', 'greysteel']

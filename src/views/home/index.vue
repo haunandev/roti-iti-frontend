@@ -7,23 +7,14 @@
         </a>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a @click="scrollTo('#services')" href="javascript:;">Our Services</a>
+            <a @click="scrollTo('#services')" href="javascript:;">Beranda</a>
           </li>
           <li class="nav-item">
-            <a @click="scrollTo('#features')" href="javascript:;">Features</a>
+            <a @click="scrollTo('#features')" href="javascript:;">Produk</a>
           </li>
-          <!-- <li class="nav-item">
-            <a @click="scrollTo('#layouts')" href="javascript:;">LAYOUTS</a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a @click="scrollTo('#components')" href="javascript:;">COMPONENTS</a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a @click="scrollTo('#apps')" href="javascript:;">APPS</a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a @click="scrollTo('#themes')" href="javascript:;">THEMES</a>
-          </li> -->
+          <li class="nav-item">
+            <a @click="scrollTo('#features')" href="javascript:;">Toko Kami</a>
+          </li>
           <li class="nav-item">
             <div class="separator"></div>
           </li>
@@ -38,44 +29,37 @@
       </div>
 
       <div class="main-container">
-        <div class="landing-page-nav">
+        <div class="landing-page-nav bg-white">
           <headroom style="height:initial;">
             <nav>
-              <div class="container d-flex align-items-center justify-content-between">
+              <div class="container d-flex align-items-center justify-content-start">
                 <a class="navbar-logo pull-left" @click="scrollTo('#home')" href="javascript:;">
                   <span class="white"></span>
                   <span class="dark"></span>
                 </a>
-                <ul class="navbar-nav d-none d-lg-flex flex-row">
-                  <li class="nav-item">
-                    <a @click="scrollTo('#services')" href="javascript:;">Our Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a @click="scrollTo('#features')" href="javascript:;">Features</a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a @click="scrollTo('#layouts')" href="javascript:;">LAYOUTS</a>
-                  </li> -->
-                  <!-- <li class="nav-item">
-                    <a @click="scrollTo('#components')" href="javascript:;">COMPONENTS</a>
-                  </li> -->
-                  <!-- <li class="nav-item">
-                    <a @click="scrollTo('#apps')" href="javascript:;">APPS</a>
-                  </li> -->
-                  <!-- <li class="nav-item">
-                    <a @click="scrollTo('#themes')" href="javascript:;">THEMES</a>
-                  </li> -->
-                  <li class="nav-item">
-                    <div class="separator"></div>
-                  </li>
-                  <li class="nav-item text-center">
+                <div class="w-100 d-flex align-items-center justify-content-start position-relative">
+                  <ul class="navbar-nav d-none d-lg-flex flex-row justify-content-center w-100">
+                    <li class="nav-item">
+                      <a @click="scrollTo('#services')" class="text-dark" href="javascript:;">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                      <a @click="scrollTo('#features')" class="text-dark" href="javascript:;">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                      <a @click="scrollTo('#features')" class="text-dark" href="javascript:;">Toko Kami</a>
+                    </li>
+                    <li class="nav-item">
+                      <div class="separator"></div>
+                    </li>
+                  </ul>
+                  <div class="">
                     <a
                       class="btn btn-primary text-white btn-sm mobile-menu-cta"
                       target="_blank"
                       :href="contactUrl"
-                    >CONTACT US</a>
-                  </li>
-                </ul>
+                    >S</a>
+                  </div>
+                </div>
                 <span
                   class="mobile-menu-button"
                   @click="showMobileMenu=!showMobileMenu; $event.stopPropagation()"
@@ -88,7 +72,7 @@
         </div>
 
         <div class="content-container" id="home">
-          <div class="section home" id="sectionHome">
+          <div class="section bg-theme-3" id="sectionHome">
             <div class="container">
               <div class="row home-row" id="homeRow">
                 <div class="col-12 d-block d-md-none">
@@ -101,50 +85,22 @@
                   </a>
                 </div>
 
-                <div class="col-12 col-xl-4 col-lg-5 col-md-6">
-                  <div class="home-text">
-                    <div class="display-1" data-aos="zoom-in">
-                      {{ $t('landing-page.title.main') }}
-                    </div>
-                    <p class="white mb-5" data-aos="fade-down" data-aos-delay="100">
-                      {{$t('landing-page.title.desc1')}}
-                      <!-- <br />
-                      <br />
-                      {{$t('landing-page.title.desc2')}} -->
-                      <br />
-                      <br />
-                      {{$t('landing-page.title.desc3')}}
-                    </p>
-                    <a class="btn btn-light btn-xl mr-2 mb-2" data-aos="fade-down" data-aos-delay="150" @click="scrollTo('#services')">
-                      Learn More!
-                      <i class="simple-icon-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
                 <div class="col-12 col-xl-7 offset-xl-1 col-lg-7 col-md-6 d-none d-md-block">
                   <a href="#">
                     <img data-aos="zoom-in" data-aos-delay="250" alt="hero" src="/assets/img/landing-page/home-hero.png" style="height: 500px;" />
                   </a>
                 </div>
-              </div>
-
-              <div class="row" id="services">
-                <div class="col-12 p-0">
-                  <div class="home-carousel text-center" data-aos="zoom-in">
-                    <h1 class="text-white">Our Services</h1>
-                    <glide-component :settings="slideSettings">
-                      <div class="card rounded" v-for="(f,index) in slideItems" :key="`slide_${index}`" data-aos="zoom-in" :data-aos-delay="index * 100">
-                        <div class="card-body text-center">
-                          <div>
-                            <i :class="f.icon+ ' large-icon'"></i>
-                            <h5 class="mb-3 font-weight-semibold">{{f.title}}</h5>
-                          </div>
-                          <div>
-                            <p class="detail-text">{{f.detail}}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </glide-component>
+                <div class="col-12 col-xl-4 col-lg-5 col-md-6">
+                  <div class="text-right">
+                    <div class="display-1 text-dark mb-2" data-aos="zoom-in">
+                      {{ $t('landing-page.title.main') }}
+                    </div>
+                    <h3 class="mb-5 text-dark" data-aos="fade-down" data-aos-delay="100">                      
+                      {{$t('landing-page.title.desc1')}}
+                    </h3>
+                    <a class="btn btn-outline-dark btn-xl mr-2 mb-2" data-aos="fade-down" data-aos-delay="150" @click="scrollTo('#services')">
+                      Belanja Sekarang
+                    </a>
                   </div>
                 </div>
               </div>
@@ -161,19 +117,28 @@
           </div>
 
           <div class="section">
-            <div class="container" id="features">
-              <div class="row">
-                <div class="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Features At a Glance</h1>
-                  <p>
-                    We tried to create an admin theme that we would like to use ourselves so we listed our
-                    priorities. We
-                    would like to have a theme that is not over complicated to use, does the job well,
-                    contains must have
-                    components and looks really nice.
-                  </p>
-                </div>
+            <div class="container" id="product">
+              <div class="home-carousel text-center" data-aos="zoom-in">
+                <h1 class="">Produk</h1>
+                <glide-component :settings="slideSettings">
+                  <div class="card rounded" v-for="(f,index) in slideItems" :key="`slide_${index}`" data-aos="zoom-in" :data-aos-delay="index * 100">
+                    <div class="card-body text-center">
+                      <div>
+                        <i :class="f.icon+ ' large-icon'"></i>
+                        <h5 class="mb-3 font-weight-semibold">{{f.title}}</h5>
+                      </div>
+                      <div>
+                        <p class="detail-text">{{f.detail}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </glide-component>
               </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="container" id="features">
 
               <div v-for="(feature,i) in features" :key="`feature_${i}`">
                 <div v-if="i%2==0" class="row feature-row">
@@ -211,126 +176,6 @@
               </div>
             </div>
           </div>
-
-          <!-- <div class="section background">
-            <div class="container" id="layouts">
-              <div class="row">
-                <div class="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Structures &amp; Layouts</h1>
-                  <p>
-                    We did our best to create layouts for various needs that developers might have and best
-                    experience
-                    for users.
-                    <br />They are clean and slick. They function well and look good at the same time.
-                  </p>
-                </div>
-              </div>
-
-              <div class="row pt-5">
-                <div
-                  class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-5"
-                  v-for="(l,index) in layouts"
-                  :key="`layout_${index}`"
-                >
-                  <img class="img-fluid border-radius depth-2 mb-3 semi-rounded" :src="l.img" />
-                  <h4 class="text-center">{{l.title}}</h4>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="section mb-0">
-            <div class="container" id="components">
-              <div class="row mb-5">
-                <div class="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Components</h1>
-                  <p>
-                    We used most popular and well managed open source components with bootstrap components.
-                    Combined them into even more useful ones. Themed them with same design principles and
-                    created a design harmony between components and layouts.
-                    <br />
-                    <br />From carousels to charts, switches to list we tried to provide components that we like
-                    to use on our development processes.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <img class="components-image mb-5 pb-5" src="/assets/img/landing-page/components.jpg" />
-          </div> -->
-
-          <!-- <div class="section background">
-            <div class="container" id="apps">
-              <div class="row">
-                <div class="col-12 offset-0 col-lg-8 offset-lg-2 text-center mb-4">
-                  <h1>Applications</h1>
-                  <p class="section-text">
-                    With the help of components and layouts, we created four different applications.
-                    They
-                    are a good way to get you started
-                    if you want to build something similar.
-                  </p>
-                </div>
-              </div>
-              <div class="row screenshots">
-                <div class="col-12 text-center mb-4">
-                  <b-tabs
-                    nav-class="justify-content-center"
-                    content-class="card-body pt-0"
-                    :no-fade="true"
-                  >
-                    <b-tab
-                      v-for="(app,index) in applications"
-                      :key="`app_${index}`"
-                      :title="app.title"
-                    >
-                      <router-link :to="app.path">
-                        <img :alt="app.title" :src="app.img" class="app-image" />
-                      </router-link>
-                    </b-tab>
-                  </b-tabs>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="section mb-0">
-            <div class="container" id="themes">
-              <div class="row mb-5">
-                <div class="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Themes</h1>
-                  <p>
-                    We carefully choosed colors and created 10 different themes with dark and light
-                    versions. You may also
-                    create your own themes easily since all the theme related styling is managed by Sass
-                    variables.
-                  </p>
-                </div>
-              </div>
-              <div class="row mb-5" v-for="(t,index) in themes" :key="`themes_${index}`">
-                <div class="col-12 text-center mb-3">
-                  <h4 class="text-center">{{t.title}}</h4>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mb-3">
-                  <div class="depth-2 color-container">
-                    <div
-                      v-for="(align,i) in ['left','center','right']"
-                      :key="`align_light_${index}_${i}`"
-                      :class="t.class + '-light-'+(i+1)+' color-' + align"
-                    ></div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                  <div class="depth-2 color-container">
-                    <div
-                      v-for="(align,i) in ['left','center','right']"
-                      :key="`align_dark_${index}_${i}`"
-                      :class="t.class + '-dark-'+(i+1)+' color-' + align"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
 
           <div class="section background background-no-bottom mb-0 pb-0">
             <div class="container">
